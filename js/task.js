@@ -115,7 +115,7 @@ function deleteTask(taskId) {
 
 function renderTaskHtml(task) {
   return (
-    "<li class='ui-state-default' data-name='" +
+    "<li class='task' data-name='" +
     task.name +
     "' data-prio='" +
     (task.priority == "low" ? "1" : task.priority == "medium" ? "2" : "3") +
@@ -130,12 +130,12 @@ function renderTaskHtml(task) {
     "/>" +
     "<label class=''>" +
     task.name +
-    "<span class='badge rounded-pill bg-" +
+    "<span class='badge bg-" +
     (task.priority == "low"
-      ? "secondary"
+      ? "green"
       : task.priority == "medium"
-      ? "success"
-      : "danger") +
+      ? "blue"
+      : "red") +
     "'>" +
     task.priority +
     "</span>" +
