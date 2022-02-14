@@ -25,11 +25,10 @@ class Task
 
 	public function create()
 	{
-
 		if ($this->task && $this->priority) {
 			$task = $this->connection->prepare("
-				INSERT INTO " . $this->table . "(`name`,`priority`)
-				VALUES(?,?)");
+				INSERT INTO " . $this->table . "(`name`,`completed`,`priority`)
+				VALUES(?,0,?)");
 
 			$task->bind_param("ss", $this->task, $this->priority);
 
